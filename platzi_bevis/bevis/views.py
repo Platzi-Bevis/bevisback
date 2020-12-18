@@ -28,7 +28,6 @@ def get_result(data, case_tests):
 def get_test(request, id_course, id_material):
 
     if request.method == "GET":
-        print(id_course, id_material)
         return Response({"Bevis API version": "1.0", 
                         "id_course": id_course,
                         "id_material": id_material,
