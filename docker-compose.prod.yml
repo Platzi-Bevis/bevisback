@@ -1,0 +1,46 @@
+version: '3.3'
+
+networks:
+  web:
+    external: true
+  internal:
+    external: false
+
+services: 
+    api:
+        build: 
+          context: ./platzi_bevis
+          dockerfile: dockerfile
+        labels:
+          - traefik.backend=websocket
+          - traefik.frontend.rule=Host:api.hardmakers.com
+          - traefik.docker.network=web
+          - traefik.port=8000
+        networks:
+          - internal
+          - web
+    
+    python:
+        build:
+          context: ./python_service
+          dockerfile: dockerfile
+        environment:
+          FLASK_ENV: development
+        ports: 
+          - "5000:5000"
+        networks:
+          - internal
+        labels:
+          - traefik.enable=false
+    doc:
+        build:
+          context: ./api_doc
+          dockerfile: dockerfile
+        labels:
+          - traefik.backend=node
+          - traefik.frontend.rule=Host:api.chatcenter.hyfi.dev
+          - traefik.docker.network=web
+          - traefik.port=3005
+        networks:
+          - internal
+          - web
