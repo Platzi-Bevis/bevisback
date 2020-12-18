@@ -1,0 +1,180 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API that allow to practice some coding from students of platzi.",
+    "version": "1.0.0",
+    "title": "Platzi bevis",
+    "contact": {
+      "email": "anturyf@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "104.236.24.221:8000",
+  "basePath": "/api/v1/",
+  "tags": [
+    {
+      "name": "tests",
+      "description": "Route to manage the info about practice and tests"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/api/v1/course/{id_course}/material/{id_material}": {
+      "get": {
+        "tags": [
+          "tests"
+        ],
+        "summary": "Retrieve the test description with id_course and id_material",
+        "description": "",
+        "operationId": "getTestDescription",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_course",
+            "description": "course id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id_material",
+            "description": "material id",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id_course": {
+                  "type": "string",
+                  "example": "2345"
+                },
+                "id_material": {
+                  "type": "string",
+                  "example": "6"
+                },
+                "test": {
+                  "type": "object",
+                  "properties": {
+                    "description": {
+                      "type": "string",
+                      "example": "Complete the add() function"
+                    },
+                    "boilerplate": {
+                      "type": "string",
+                      "example": "def add():\npass"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid field"
+          },
+          "404": {
+            "description": "test not found"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "tests"
+        ],
+        "summary": "submit the test to be evaluate",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id_course",
+            "description": "course id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "id_material",
+            "description": "material id",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "body",
+            "name": "submit_test",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "id_course",
+                "id_material",
+                "language",
+                "code"
+              ],
+              "properties": {
+                "language": {
+                  "type": "string",
+                  "example": "JS"
+                },
+                "code": {
+                  "type": "string",
+                  "example": "function() => {return True}"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "request done",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "output_test": {
+                  "type": "string",
+                  "example": "test 1 - ok"
+                },
+                "time": {
+                  "type": "string",
+                  "example": "100ms"
+                },
+                "status": {
+                  "type": "string",
+                  "example": "Accepted"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

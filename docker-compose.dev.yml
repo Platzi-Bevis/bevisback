@@ -15,3 +15,9 @@ services:
           FLASK_ENV: development
         ports: 
           - "5000:5000"
+    doc:
+        build:
+          context: ./api_doc
+          dockerfile: dockerfile
+        ports:
+          - "3002:3002"
