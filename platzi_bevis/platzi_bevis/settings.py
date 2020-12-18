@@ -30,9 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['api.hardmakers.com', '127.0.0.1']
 
-CORS_ALLOWED_ORIGINS = [
-    "https://platzi-bevis.github.io/bevisFront/",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://platzi-bevis.github.io/bevisFront/",
+# ]
 
 CORS_ALLOW_ALL_ORIGINS = True
 # Application definition
