@@ -38,7 +38,7 @@ services:
           dockerfile: dockerfile
         labels:
           - traefik.backend=doc
-          - traefik.frontend.rule=Host:api.hardmakers.com
+          - traefik.frontend.rule=Host:docs.hardmakers.com
           - traefik.docker.network=web
           - traefik.port=3002
         networks:
