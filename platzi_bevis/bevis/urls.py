@@ -8,5 +8,5 @@ from django.urls.resolvers import URLPattern
 from bevis import views as bevis_views
 
 urlpatterns = [
-    path(route='api/v1/test', view=bevis_views.test, name='tests')
+    path(route='api/v1/test/{id_class}', view=bevis_views.test, name='tests')
 ]

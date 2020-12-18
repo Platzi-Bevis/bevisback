@@ -13,4 +13,5 @@ def test(request):
     if request.method == 'POST':
         pass
     elif request.method == 'GET':
+        print(request.data)
         return Response({"API versión": "1"}, status=status.HTTP_200_OK)
