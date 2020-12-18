@@ -25,7 +25,7 @@ def run_test(test_info):
 
     return result, output
 
-@app.route('/test', methods=['POST', "GET"])
+@app.route('/test', methods=['POST'])
 def exec_test():
     test_info = request.get_json()
 
