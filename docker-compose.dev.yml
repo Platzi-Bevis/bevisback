@@ -1,0 +1,17 @@
+version: '3.3'
+services: 
+    api:
+        build: 
+          context: ./platzi_bevis
+          dockerfile: dockerfile
+        ports: 
+          - "8000:8000"
+    
+    python:
+        build:
+          context: ./python_service
+          dockerfile: dockerfile
+        environment:
+          FLASK_ENV: development
+        ports: 
+          - "5000:5000"
