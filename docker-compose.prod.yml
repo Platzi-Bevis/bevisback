@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.7'
 
 networks:
   web:
@@ -12,7 +12,7 @@ services:
           context: ./platzi_bevis
           dockerfile: dockerfile
         labels:
-          - traefik.backend=websocket
+          - traefik.backend=api
           - traefik.frontend.rule=Host:api.hardmakers.com
           - traefik.docker.network=web
           - traefik.port=8000
@@ -37,10 +37,10 @@ services:
           context: ./api_doc
           dockerfile: dockerfile
         labels:
-          - traefik.backend=node
-          - traefik.frontend.rule=Host:api.chatcenter.hyfi.dev
+          - traefik.backend=doc
+          - traefik.frontend.rule=Host:api.hardmakers.com
           - traefik.docker.network=web
-          - traefik.port=3005
+          - traefik.port=3002
         networks:
           - internal
           - web
