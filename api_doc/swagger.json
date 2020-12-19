@@ -12,7 +12,7 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "104.236.24.221:8000",
+  "host": "api.hardmakers.com",
   "basePath": "/api/v1/",
   "tags": [
     {
@@ -21,11 +21,10 @@
     }
   ],
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "paths": {
-    "/api/v1/course/{id_course}/material/{id_material}": {
+    "/course/{id_course}/material/{id_material}/tests": {
       "get": {
         "tags": [
           "tests"
