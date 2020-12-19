@@ -7,6 +7,7 @@ class Courses(models.Model):
     def __str__(self):
         return self.title
 
+
 class Materials(models.Model):
     title = models.CharField(max_length=100, blank=False)
     id_course = models.ForeignKey(Courses, on_delete=models.DO_NOTHING)
