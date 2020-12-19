@@ -21,6 +21,6 @@
 
 ## Despliegue
 >El despliegue se realizo usando un droplet de DigitalOcean, con Docker y Traefik
->Puede verlo aquí: 
->Endpoint: https://api.hardmakers.com/api/v1/course/12/material/2/tests
->Dashboard - Admin: https://api.hardmakers.com/admin/
+>Puede verlo aquí:
+>- Endpoint: https://api.hardmakers.com/api/v1/course/12/material/2/tests
+>- Dashboard - Admin: https://api.hardmakers.com/admin/
