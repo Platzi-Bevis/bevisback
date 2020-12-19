@@ -14,7 +14,7 @@ def run_test(test_info):
         file.write(test_info["code"])
     
     with open("test_case.txt", "w") as file:
-        file.write(test_info["case_tests"])
+        file.write(test_info["case_tests"].replace('\r', ''))
 
     current = time.time()
 
