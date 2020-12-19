@@ -1,6 +1,7 @@
 from django.db import models
 from .courses import Materials, Courses
 
+
 class Practice_tests(models.Model):
     title = models.CharField(max_length=100, blank=True)
     case_tests = models.TextField(blank=False)
