@@ -71,13 +71,21 @@
                 "test": {
                   "type": "object",
                   "properties": {
+                    "title": {
+                      "type": "string",
+                      "example": "List comprehension"
+                    },
+                    "cas_tests": {
+                      "type": "string",
+                      "example": "[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
+                    },
                     "description": {
                       "type": "string",
-                      "example": "Complete the add() function"
+                      "example": "Print the square operation of numbers from 0 to 9 using List comprehension.\r\n\r\nExpected Output:\r\n\r\n[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]"
                     },
                     "boilerplate": {
                       "type": "string",
-                      "example": "def add():\npass"
+                      "example": "def square():\r\n    #here your code\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    square()"
                     }
                   }
                 }
@@ -159,8 +167,8 @@
                   "example": "100ms"
                 },
                 "status": {
-                  "type": "string",
-                  "example": "Accepted"
+                  "type": "boolean",
+                  "example": true
                 }
               }
             }
